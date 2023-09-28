@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import "./globals.css";
 import type { Metadata } from "next";
 
@@ -14,6 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <div className="backdrop-blur-lg backdrop-filter top-0 sticky z-[99]">
+          <Navbar />
+        </div>
         <main className="max-w-6xl mx-auto">{children}</main>
       </body>
     </html>
