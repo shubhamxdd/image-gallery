@@ -1,6 +1,7 @@
 import fetchImages from "@/lib/fetchImages";
 import type { Images } from "@/models/schema";
 import ImageContainer from "./ImageContainer";
+import addBlurredDataUrls from "@/lib/getBase64";
 
 const Gallery = async () => {
   const url = "https://api.pexels.com/v1/curated";
@@ -9,9 +10,11 @@ const Gallery = async () => {
   if (!images)
     return <h1 className="m-4 text-3xl font-bold">No Images Found!!</h1>;
 
+  const photosWithBlur = await addBlurredDataUrls(images);
+
   return (
     <section className="px-2 my-3 grid gap-2 grid-cols-gallery">
-      {images.photos.map((photo) => (
+      {photosWithBlur.map((photo) => (
         <ImageContainer photo={photo} key={photo.id} />
       ))}
     </section>
