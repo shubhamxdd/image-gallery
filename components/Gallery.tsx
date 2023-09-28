@@ -9,12 +9,10 @@ const Gallery = async () => {
     return <h1 className="m-4 text-3xl font-bold">No Images Found!!</h1>;
 
   return (
-    <section>
-      <ul>
+    <section className="px-2 my-3 grid gap-2 grid-cols-gallery">
         {images.photos.map((photo) => (
-          <li key={photo.id}>{photo.src.large}</li>
+          <div key={photo.id} className="h-64 bg-gray-200 rounded-xl">{photo.src.large}</div>
         ))}
-      </ul>
     </section>
   );
 };
