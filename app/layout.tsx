@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="dark:bg-gray-700 bg-white">
         <div className="backdrop-blur-lg backdrop-filter top-0 sticky z-[99]">
           <Navbar />
         </div>
