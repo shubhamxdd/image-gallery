@@ -14,13 +14,13 @@ export default async function fetchImages(
 
     const imagesResult: Images = await res.json();
 
-    console.log(imagesResult);
+    // console.log(imagesResult);
 
     const parsedData = imagesSchema.parse(imagesResult);
 
     // TODO CHANGE ERROR
     if (parsedData.total_results === 0) throw new Error("No images found!!\n");
-    console.log(parsedData);
+    // console.log(parsedData);
 
     return parsedData;
   } catch (error) {
