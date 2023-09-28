@@ -19,7 +19,7 @@ export default function Footer({ topic, page, prevPage, nextPage }: Props) {
 
   const nextPageArea = nextPage ? (
     <Link
-      href={`/results/${topic}/${nextPage}`}
+      href={`/search/${topic}/${nextPage}`}
       className={!prevPage ? "mx-auto" : ""}
     >
       {!prevPage ? "more" : null} &gt;&gt;&gt;
@@ -29,7 +29,7 @@ export default function Footer({ topic, page, prevPage, nextPage }: Props) {
   const prevPageArea = prevPage ? (
     <>
       <Link
-        href={`/results/${topic}/${nextPage}`}
+        href={`/search/${topic}/${nextPage}`}
         className={!nextPage ? "mx-auto" : ""}
       >
         &lt;&lt;&lt; {!nextPage ? "back" : null}
@@ -39,7 +39,7 @@ export default function Footer({ topic, page, prevPage, nextPage }: Props) {
         page && num === parseInt(page) ? (
           <span key={i}>{num}</span>
         ) : (
-          <Link key={i} href={`/results/${topic}/${num}`} className="underline">
+          <Link key={i} href={`/search/${topic}/${num}`} className="underline">
             {num}
           </Link>
         )
